@@ -1,4 +1,3 @@
 #!/bin/bash
-igcc -S -masm=intel $CFILE
-
+gcc -S -masm=intel $CFILE
 
