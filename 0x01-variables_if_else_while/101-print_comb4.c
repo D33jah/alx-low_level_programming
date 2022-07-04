@@ -1,16 +1,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /**
  * main - Task 1 print the last digit of the number stored in the variable n
  *
  * Return: 0
  **/
-
 int main(void)
 {
-	nt ch;
+	int ch;
 	int n;
 	int m;
 
@@ -36,4 +34,4 @@ int main(void)
 	}
 	putchar(10);
 	return (0);
-}				
+}	
