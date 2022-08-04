@@ -1,23 +1,39 @@
-i#include "function_pointers.h"
+#include<stdio.h>
+#include<stdlib.h>
 
 /**
- * main - print opcodes of its own main function
- * @argc: number of arguments
- * @argv: vector of arguments
- * Return: 0 if no errors
+ * main- Entry point
+ * @argc: the number of parameters.
+ * @argv: the parameeters in the case the number ob bytes.
+ * Return: 0 in succes.
  */
 int main(int argc, char *argv[])
 {
-	register int i, num;
-	char *ptr = (char *)main;
+	int i, n;
 
 	if (argc != 2)
-		printf("Error\n"), exit(1);
-	num = atoi(argv[1]);
-	if (num < 0)
-		printf("Error\n"), exit(2);
-	for (i = 0; i < num - 1; i++)
-		printf("%02hhx ", ptr[i]);
-	printf("%02hhx\n", ptr[i]);
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+
+	n = atoi(argv[1]);
+	if (n < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	for (i = 0; i < n; i++)
+	{
+		printf("%02hhx", *((char *)main + i));
+		if (i < n - 1)
+			printf(" ");
+		else
+			printf("\n");
+	}
+
 	return (0);
 }
+
